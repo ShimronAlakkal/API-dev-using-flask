@@ -1,1 +1,7 @@
-print('just testing git on my new laptop. Its an m1')c jd ckajd ck
+from fastapi import FastAPI, HTTPException
+
+app = FastAPI()
+
+@app.get("/")
+def index():
+    return {'message':"you're at ques notes"}
