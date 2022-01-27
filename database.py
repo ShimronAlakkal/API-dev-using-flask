@@ -1,9 +1,9 @@
 import mysql.connector as mc
 from starlette.status import HTTP_404_NOT_FOUND
 
-connection = mc.connect( host = "localhost", passwd = "qwertyuiopasdfghjkl" ,user = "root",database = "api")
+connection = mc.connect( host = "your url", passwd = "your pass" ,user = "root",database = "your database")
 cursor = connection.cursor()
-cursor.execute('use api;')
+cursor.execute('use database;')
 
 # insert new record 
 # if you want to pass in a null value, use 'null' in the value holder.

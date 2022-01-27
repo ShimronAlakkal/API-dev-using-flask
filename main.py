@@ -1,4 +1,3 @@
-from os import stat
 from typing import Optional
 from fastapi import FastAPI, status, HTTPException
 from pydantic import BaseModel
@@ -19,13 +18,11 @@ def index():
     return {"message": "You're on Ques"}
 
 
-
 # get all videos in app
 @app.get("/videos",status_code = status.HTTP_200_OK)
 async def get_all_videos():
     status, values = get_all()
     return {'data':values}
-
 
 
 # create a new video that is not already in the db
