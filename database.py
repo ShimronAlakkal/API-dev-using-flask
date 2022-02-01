@@ -1,9 +1,8 @@
 import mysql.connector as mc
-from starlette.status import HTTP_404_NOT_FOUND
 
-connection = mc.connect( host = "your url", passwd = "your pass" ,user = "root",database = "your database")
+connection = mc.connect( host = "localhost", passwd = "1234567890" ,user = "root",database = "test")
 cursor = connection.cursor()
-cursor.execute('use database;')
+cursor.execute('use test;')
 
 # insert new record 
 # if you want to pass in a null value, use 'null' in the value holder.
@@ -68,5 +67,13 @@ def find_video_with_id(vid):
     return False
 
 
+def select_everything_from_test():
+    global cursor
+    cursor.execute("select * from user")
+    for i in cursor:
+        print(i,' is the i in selection')
+
+select_everything_from_test()
+print('EOP*************')
 
   
