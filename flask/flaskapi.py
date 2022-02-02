@@ -4,6 +4,7 @@ from flask_restful import Resource, Api
 app = Flask(__name__)
 api = Api(app)
 
+# gotta set the flask env commands to development and debug to true before running the code in test.
 
 users_info = {
     1:{"name":"Andrew","age":18},
